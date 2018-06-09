@@ -31,4 +31,10 @@ end
 
 
 text = ARGV[0].to_s
+if text.length > 10000
+  puts "Please enter more short text"
+elsif text.length == 0
+  puts "You don't enter text"
+else
 division(text)
+  end
