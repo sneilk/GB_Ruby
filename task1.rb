@@ -7,5 +7,7 @@ def palindromeCheck(text)
 end
 
 
-text = ARGV[0].to_s
-palindromeCheck(text)
+text = ARGV[0].to_s.downcase
+symb = Regexp.new("[ ;:'\"\-\\/&@#$%^*()_+=,.!?]")
+palindromeCheck(text.gsub(symb, ''))
+>>>>>>> master
