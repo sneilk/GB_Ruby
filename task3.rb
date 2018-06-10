@@ -1,13 +1,12 @@
 #The function to division string to vowels and consonants letters and numbers
 
 def division(text)
-  vowels = Regexp.new("[aqeyuioj]", Regexp::IGNORECASE)
-  nums = Regexp.new("[0-9]")
-  letters = Regexp.new("[a-z]", Regexp::IGNORECASE)
-
-
-
-
+  vow = text.scan(/[qeyuiojaQEYUIOJA]+/).join
+  cons = text.scan(/[wrtplkhgfdszxcvbnmWRTPLKHGFDSZXCVBNM]+/).join
+  nums = text.scan(/[0-9]+/).join
+  vow += " " if vow != ""
+  cons += " " if cons != ""
+  puts (vow + cons +  nums)
 end
 
 
