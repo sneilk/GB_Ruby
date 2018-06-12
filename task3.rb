@@ -5,10 +5,13 @@ if text.length > 10000
 elsif text.length == 0
   puts "You don't enter text"
 else
-  vow = text.scan(/[qeyuiojaQEYUIOJA]+/).join
-  cons = text.scan(/[wrtplkhgfdszxcvbnmWRTPLKHGFDSZXCVBNM]+/).join
-  nums = text.scan(/[0-9]+/).join
-  vow += " " if vow != ""
-  cons += " " if cons != ""
-  puts (vow + cons +  nums)
+  vow = Regexp.new("[qeyuiojaQEYUIOJA]")
+  cons = Regexp.new("[wrtplkhgfdszxcvbnmWRTPLKHGFDSZXCVBNM]")
+  nums = Regexp.new("[0-9]")
+  vowR = text.scan(vow).join
+  consR = text.scan(cons).join
+  numsR = text.scan(nums).join
+  vowR += " " if vowR != ""
+  consR += " " if consR != ""
+  puts (vowR + consR +  numsR)
 end
