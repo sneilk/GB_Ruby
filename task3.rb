@@ -5,8 +5,8 @@ if text.length > 10000
 elsif text.length == 0
   puts "You don't enter text"
 else
-  vow = Regexp.new("[qeyuiojaQEYUIOJA]")
-  cons = Regexp.new("[wrtplkhgfdszxcvbnmWRTPLKHGFDSZXCVBNM]")
+  vow = Regexp.new("[qeyuioja]", Regexp::IGNORECASE)
+  cons = Regexp.new("[wrtplkhgfdszxcvbnm]", Regexp::IGNORECASE)
   nums = Regexp.new("[0-9]")
   vowR = text.scan(vow).join
   consR = text.scan(cons).join
